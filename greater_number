@@ -1,0 +1,15 @@
+while True: #To keep the loop repeating
+    
+    try: #If user inputs any other value than interger
+        a = int(input("Enter the value of a : ")) #To take input from user
+        b = int(input("Enter the value of b : "))
+
+        if a == b : # To check the condition
+            print("a and b are equal ")
+        elif a > b :
+            print("a is greater than b")
+        else:
+            print("b is greater than a")
+
+    except: #To tell user he has not entered a integer
+        print("The value of a and b should be an integer")
