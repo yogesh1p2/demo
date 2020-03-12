@@ -1,0 +1,18 @@
+import re
+while True:
+
+    a = input('Enter a sting \n')
+    v = 0
+    c = 0
+    w = 1
+    for i in a:
+        if i == 'A' or i == 'a' or i == 'E' or i == 'e' or 
+        i == 'I' or i == 'i' or i == 'O' or i == 'o' or i == 'u' or i == 'U':
+            v+=1
+            c+=1
+        elif i == ' ':
+            w+=1
+        else:
+            c+=1
+            
+    print('The number of vowels is {},charcter is {} and words is {}'.format(v,c,w))
