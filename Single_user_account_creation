@@ -1,0 +1,53 @@
+import re
+import time
+def login(id_,pa):
+    print("Verify your account")
+    while True:
+        id_i=input("Enter your id\n")
+        if id_i == id_:
+            tries = 0
+            while True:
+                pa_i=input("Enter your password\n")
+                if pa_i == pa:
+                    print('Login succesfull')
+                    print('Hello user')
+                    return True
+                else:
+                    print("Invalid password")
+                    tries+=1
+                    print("System will freez after 3 attemps, attemp number : ",tries)
+                    if tries == 3:
+                        print("Try after 10 Seconds")
+                        time.sleep(10)
+                        tries = 0
+            return True
+        else:
+            print("Invalid id")
+
+def passw():
+    pa=input("Set your password : \n")
+    x = True
+    while x:
+        if len(pa)<6 or len(pa)>12:
+            print("Length of password should be greater than 6 and less than 12")
+            passw()
+        elif not re.search ("[a-z]",pa):
+            print("Password should include 1 small alphabet")
+            passw()
+        elif not re.search ("[A-Z]",pa):
+            print("Password should include 1 Big alphabet")
+            passw()
+        elif not re.search ("[!@#$%^&*()]",pa):
+            print("Password should include 1 special character")
+            passw()
+        else:
+            print("Password has been set succesfully")
+            x = False
+    return pa
+    
+        
+
+print("To created single user ID, set it's password and verify it")
+id_ = input("Set your id : \n")
+pa = passw() #Except the password validated by function passw()
+login(id_,pa)#pass inputs to function id_ and pa
